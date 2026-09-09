@@ -17,34 +17,38 @@ The application provides a chat interface where users can ask questions about a 
 
 ## Architecture
 
-```text
-User
-  |
-  v
-Streamlit Chat Interface
-  |
-  v
-Gemini AI Operator
-  |
-  +--------------------+
-  |                    |
-  v                    v
-Ask Tools           Run Tool
-(read-only)         (write request)
-  |                    |
-  v                    v
-Mock CRM JSON      Confirmation UI
-                       |
-                  +----+----+
-                  |         |
-                Cancel    Confirm
-                  |         |
-                  v         v
-                No write   Execute
-                              |
-                              v
-                         Mock CRM JSON
+```mermaid
+flowchart TD
+    U[User] --> UI[Streamlit Chat UI]
+    UI --> LLM[Gemini AI Operator]
+
+    LLM --> A[Ask Tools]
+    LLM --> R[Run Tool]
+
+    A --> S[search_leads]
+    A --> I[get_insights]
+
+    S --> CRM[(Mock CRM JSON)]
+    I --> CRM
+
+    R --> C{User Confirmation}
+    C -->|Cancel| X[No Change]
+    C -->|Confirm| T[create_task]
+    T --> CRM
 ```
+
+
+### Write Safety Flow
+
+```mermaid
+flowchart LR
+    R[User requests action] --> P[Gemini proposes tool]
+    P --> C{Confirmation required}
+    C -->|Cancel| N[No CRM change]
+    C -->|Confirm| E[Python executes tool]
+    E --> D[(Mock CRM JSON)]
+```
+
 
 ## LLM Provider
 
