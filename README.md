@@ -35,6 +35,22 @@ flowchart TD
     C -->|Cancel| X[No Change]
     C -->|Confirm| T[create_task]
     T --> CRM
+
+    classDef user fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef interface fill:#eff6ff,stroke:#3b82f6,stroke-width:2px,color:#1e3a8a;
+    classDef model fill:#bfdbfe,stroke:#2563eb,stroke-width:2px,color:#1e3a8a;
+    classDef tool fill:#dbeafe,stroke:#60a5fa,stroke-width:2px,color:#1e40af;
+    classDef data fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0c4a6e;
+    classDef safety fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f;
+    classDef success fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d;
+
+    class U user;
+    class UI interface;
+    class LLM model;
+    class A,R,S,I,T tool;
+    class CRM data;
+    class C safety;
+    class X success;
 ```
 
 
