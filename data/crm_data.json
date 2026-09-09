@@ -1,0 +1,60 @@
+{
+  "leads": [
+    {
+      "id": "L001",
+      "name": "Aisha Khan",
+      "company": "TechNova",
+      "email": "aisha@technova.example",
+      "interest": "AI automation",
+      "status": "new"
+    },
+    {
+      "id": "L002",
+      "name": "James Wilson",
+      "company": "DataBridge",
+      "email": "james@databridge.example",
+      "interest": "Data analytics",
+      "status": "contacted"
+    },
+    {
+      "id": "L003",
+      "name": "Sophie Brown",
+      "company": "CloudWorks",
+      "email": "sophie@cloudworks.example",
+      "interest": "Cloud migration",
+      "status": "new"
+    },
+    {
+      "id": "L004",
+      "name": "Daniel Patel",
+      "company": "FinEdge",
+      "email": "daniel@finedge.example",
+      "interest": "AI automation",
+      "status": "qualified"
+    },
+    {
+      "id": "L005",
+      "name": "Emily Carter",
+      "company": "HealthTech",
+      "email": "emily@healthtech.example",
+      "interest": "Data analytics",
+      "status": "new"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T001",
+      "title": "Follow up with James Wilson",
+      "due": "2026-09-10",
+      "related_to": "L002",
+      "status": "pending"
+    },
+    {
+      "id": "T002",
+      "title": "Call Aisha Khan",
+      "due": "tomorrow",
+      "related_to": "L001",
+      "status": "pending"
+    }
+  ]
+}
